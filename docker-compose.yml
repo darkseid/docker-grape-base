@@ -1,0 +1,7 @@
+app:
+  build: .
+  command: shotgun config.ru --host '0.0.0.0' --port 5000
+  volumes:
+    - .:/app
+  ports:
+    - "5000:5000"

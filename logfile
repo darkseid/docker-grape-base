@@ -1,0 +1,35 @@
+LOG:  database system was shut down at 2017-01-15 21:55:27 BRST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "tasks" does not exist at character 566
+STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a
+	                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	                LEFT JOIN pg_type t ON a.atttypid = t.oid
+	                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+	               WHERE a.attrelid = '"tasks"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+ERROR:  relation "tasks" does not exist at character 24
+STATEMENT:  SELECT  "tasks".* FROM "tasks" LIMIT $1
+ERROR:  there is no parameter $1 at character 38
+STATEMENT:  SELECT  "tasks".* FROM "tasks" LIMIT $1
+	;
+ERROR:  relation "tasks" does not exist at character 15
+STATEMENT:  select * from tasks
+ERROR:  syntax error at or near "\" at character 1
+STATEMENT:  \d
+FATAL:  database "grape_app" does not exist
+FATAL:  database "grape_test" does not exist
+FATAL:  database "test" does not exist
+ERROR:  syntax error at or near "/" at character 1
+STATEMENT:  /q
+	quit
+	;
+ERROR:  syntax error at or near "quit" at character 1
+STATEMENT:  quit
+	;
