@@ -1,4 +1,6 @@
-host: 'localhost'
-adapter: 'postgresql'
-encoding: 'utf-8'
-database: 'grape_task'
+development:
+  host: 'db'
+  adapter: 'postgresql'
+  encoding: 'utf-8'
+  database: 'grape_task'
+  user: 'postgres'
