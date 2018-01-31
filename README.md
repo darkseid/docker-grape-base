@@ -16,8 +16,6 @@ docker run --rm -itP -v $(pwd):/app -p 5000:5000 rafaelhm/grape_base
 # Using composer:
 ```
 docker-compose up
-```
-```
 docker-compose down
 ```
 
