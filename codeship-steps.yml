@@ -1,4 +1,4 @@
 - name: specs
   tag: master
-  service: wev
+  service: web
   command: bundle exec rspec
