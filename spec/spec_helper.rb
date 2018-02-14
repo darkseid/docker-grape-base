@@ -13,12 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'grape'
-require 'active_record'
-require './config/database_initializer.rb'
-require './models/task.rb'
-require './api.rb'
-
+require './config/loader.rb'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

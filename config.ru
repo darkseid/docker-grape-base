@@ -1,7 +1,3 @@
-require 'grape'
-require 'active_record'
-require './config/database_initializer.rb'
-require './models/task.rb'
-require './api.rb'
+require './config/loader.rb'
 
 run TaskApp::API
