@@ -5,4 +5,8 @@ gem 'grape'
 gem 'shotgun'
 gem 'activerecord', '~> 5.1.4'
 gem 'pg'
-gem 'rake'
+gem 'rake', '~> 12.3.0'
+
+group :test, :development do
+  gem 'rspec'
+end

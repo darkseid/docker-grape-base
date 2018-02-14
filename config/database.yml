@@ -4,3 +4,10 @@ development:
   encoding: 'utf-8'
   database: 'grape_task'
   user: 'postgres'
+
+test:
+  host: 'db'
+  adapter: 'postgresql'
+  encoding: 'utf-8'
+  database: 'grape_task'
+  user: 'postgres'  
