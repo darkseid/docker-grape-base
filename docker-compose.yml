@@ -12,3 +12,5 @@ services:
       - "5000:5000"
     links:
       - postgres
+    environment:
+      DATABASE_URL: postgres://postgres@postgres/grape_task
