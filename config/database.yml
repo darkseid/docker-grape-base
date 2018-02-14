@@ -1,5 +1,5 @@
 development:
-  host: 'db'
+  host: 'db-test'
   adapter: 'postgresql'
   encoding: 'utf-8'
   database: 'grape_task'
