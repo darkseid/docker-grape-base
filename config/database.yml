@@ -1,12 +1,12 @@
 development:
-  host: 'db-test'
+  url: <%= ENV['DATABASE_URL'] %>
   adapter: 'postgresql'
   encoding: 'utf-8'
   database: 'grape_task'
   user: 'postgres'
 
 test:
-  host: 'db-test'
+  host: 'postgres'
   adapter: 'postgresql'
   encoding: 'utf-8'
   database: 'grape_task'

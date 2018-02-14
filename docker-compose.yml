@@ -1,14 +1,14 @@
 version: '3'
 services:
-  db-test:
+  postgres:
     image: postgres
   web:
     build: .
     command: shotgun config.ru --host '0.0.0.0' --port 5000
-    entrypoint: ["./scripts/wait-for-it.sh", "db-test:5432" , "--", "./scripts/after_hook.sh"]
+    entrypoint: ["./scripts/wait-for-it.sh", "postgres:5432" , "--", "./scripts/after_hook.sh"]
     volumes:
       - .:/app
     ports:
       - "5000:5000"
     links:
-      - db-test
+      - postgres
