@@ -44,7 +44,7 @@ end
 load 'active_record/railties/databases.rake'
 
 namespace :g do
-  desc "Generate migration"
+  desc 'Generate migration'
   task :migration do
     name = ARGV[1] || raise("Specify name: rake g:migration your_migration")
     timestamp = Time.now.strftime("%Y%m%d%H%M%S")

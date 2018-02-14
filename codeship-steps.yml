@@ -1,4 +1,4 @@
 - name: specs
   tag: master
   service: web
-  command: bundle exec rspec
+  command: scripts/ci.sh
