@@ -1,6 +1,6 @@
 web:
   build: .
   depends_on:
-    - postgres
+    - db
   environment:
     DATABASE_URL: postgres://postgres@postgres/grape_task
