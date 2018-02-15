@@ -15,7 +15,18 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require './config/loader.rb'
 
+# Shoulda::Matchers.configure do |config|
+#   config.integrate do |with|
+#     with.test_framework :rspec
+#     with.library :active_record
+#   end
+# end
+
 RSpec.configure do |config|
+
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

@@ -3,33 +3,23 @@ require 'active_record'
 require 'erb'
 require 'grape'
 require 'active_record'
+require 'shoulda-matchers'
 
+path = File.expand_path(File.join(File.dirname(__FILE__), '../'))
+require File.join(path, 'config', 'database_initializer.rb')
+puts 'database initialized'
 
-path = File.expand_path(File.join(File.dirname(__FILE__), "../"))
-require File.join(path, "config", "database_initializer.rb")
-puts "database initialized"
-
-directories = ['models']
+directories = ['models', 'services', 'workers']
 
 directories.each do |dir|
-  all_ruby_files = File.join(path, dir, "**/*.rb")
-  Dir[all_ruby_files].each do |file|
+  ruby_files = File.join(path, dir, '**/*.rb')
+  Dir[ruby_files].each do |file|
     load file
-    puts file
+    puts file + ' loaded'
   end
 end
 
-puts "models loaded"
+puts 'models loaded'
 
-require File.join(path, "api.rb")
-puts "API initialized"
-# errors = []
-# Dir[all_ruby_files].each do |file|
-#   begin
-#     load file unless file == File.expand_path(__FILE__)
-#   rescue NameError => e
-#     errors << file
-#   end
-# end
-
-# errors.each { |f| load(f) }
+require File.join(path, 'api.rb')
+puts 'API initialized'

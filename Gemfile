@@ -9,4 +9,5 @@ gem 'rake', '~> 12.3.0'
 
 group :test, :development do
   gem 'rspec'
+  gem 'shoulda-matchers', '~> 3.0'
 end

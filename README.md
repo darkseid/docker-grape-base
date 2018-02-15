@@ -25,3 +25,7 @@ Go to [http://localhost:5000/tasks](http://localhost:5000/tasks)
 ```
 docker-compose run web bundle exec rspec
 ```
+
+# TODO's
+* When added new gems, you still need to run ```docker-compose build```
+* 
